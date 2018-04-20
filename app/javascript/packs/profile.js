@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
         message: 'Vue muli-steps form',
         step:1,
         registration:{
-          name:null,
-          email:null,
-          street:null,
-          city:null,
-          state:null,
-          numtickets:0,
-          shirtsize:'XL'
+          name: null,
+          email: null,
+          street: null,
+          city: null,
+          state: null,
+          numtickets: 0,
+          shirtsize: 'XL'
         }
       }
     },
