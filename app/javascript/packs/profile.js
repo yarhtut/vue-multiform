@@ -34,7 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
       next() {
         this.step++;
         const { name, email } = this.registration;
-        debugger
+        const token = document.querySelector(`meta[name='csrf-token']`).getAttribute('content');
+
+        const data = { name: name, email: email }
+
+        fetch(`/profiles` , {
+          body: JSON.stringify(data),
+          method: 'POST',
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Content-type': 'application/json',
+            'X-CSRF-TOKEN': token
+          },
+          credentials: 'same-origin'
+        })
+        .then(() => {
+        
+          debugger
+        })
       },
       submit() {
         alert('Submit to blah and show blah and etc.');
