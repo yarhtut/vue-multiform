@@ -1,10 +1,3 @@
-/* eslint no-console: 0 */
-// Run this example by adding <%= javascript_pack_tag 'hello_vue' %> (and
-// <%= stylesheet_pack_tag 'hello_vue' %> if you have styles in your component)
-// to the head of your layout file,
-// like app/views/layouts/application.html.erb.
-// All it does is render <div>Hello Vue</div> at the bottom of the page.
-
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
 
@@ -14,32 +7,31 @@ document.addEventListener('DOMContentLoaded', () => {
     components: { App },
     data() {
       return {
-        message: 'Vue muli-steps form',
-        step:1,
-        registration:{
-          name: null,
+        message: 'Learning how Rails and Vue.js working together by building multi-steps form',
+        profile:{
+          steps: 1,
+          first_name: null,
+          last_name: null,
+          first_name: null,
           email: null,
           street: null,
+          suburb: null,
           city: null,
-          state: null,
-          numtickets: 0,
-          shirtsize: 'XL'
+          income: 0,
+          partner_name: null,
+          partner_relation: null,
         }
       }
     },
     methods:{
       prev() {
-        this.step--;
+        this.profile.steps--;
       },
       next() {
-        this.step++;
-        const { name, email } = this.registration;
         const token = document.querySelector(`meta[name='csrf-token']`).getAttribute('content');
 
-        const data = { name: name, email: email }
-
         fetch(`/profiles` , {
-          body: JSON.stringify(data),
+          body: JSON.stringify({ profile: this.profile }),
           method: 'POST',
           headers: {
             'X-Requested-With': 'XMLHttpRequest',
@@ -49,12 +41,28 @@ document.addEventListener('DOMContentLoaded', () => {
           credentials: 'same-origin'
         })
         .then(() => {
-        
-          debugger
+          this.profile.steps++;
         })
       },
+      stepsTwo() {
+        const token = document.querySelector(`meta[name='csrf-token']`).getAttribute('content');
+
+        //fetch(`/profiles` , {
+        //  body: JSON.stringify({ profile: this.profile }),
+        //  method: 'POST',
+        //  headers: {
+        //    'X-Requested-With': 'XMLHttpRequest',
+        //    'Content-type': 'application/json',
+        //    'X-CSRF-TOKEN': token
+        //  },
+        //  credentials: 'same-origin'
+        //})
+        //.then(() => {
+        //})
+          this.profile.steps++;
+      },
       submit() {
-        alert('Submit to blah and show blah and etc.');
+        alert('Your Profile has been send.');
       }
     }
   })

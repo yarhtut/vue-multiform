@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$white: #fefefe;
+$silver-grey: #efefef;
+$silver: #cccccc;
+$seashell: #f1f1f1;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #aaaaaa;
+
+  h1 {
+    color: whiteSmoke;
+  }
+
+  h4 {
+    color: #111111;
+    font-weight: 800;
+    margin-left: .1rem;
+    text-transform: uppercase;
+  }
+
+  color: #333333;
+}
+
+form {
+  margin: 1rem;
+  width: 30rem;
+
+  input {
+    margin-top: 1rem;
+    display: inline-flex;
+    width: 98%;
+    height: 4rem;
+    margin-bottom: .5rem;
+    transition: background 85ms ease-in,border-color 85ms ease-in;
+    border: none;
+    border-bottom: 1px solid $silver;
+    padding: 0 1rem;
+  }
+  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+
+    background-color: red !important;
+  }
+  input:focus {
+    background-color: $white !important;
+  }
+
+  button {
+    padding: .5rem 1rem;
+    background-color: #61bd4f;
+    border-radius: 5px;
+    border: none;
+    color: #fefefe;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 1rem;
+  }
+}

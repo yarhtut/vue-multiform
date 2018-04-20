@@ -1,29 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: 
-  last_name: MyString
-  nick_name: MyString
+  name: MyString
+  user: MyString
   email: MyString
-  street: MyString
-  suburb: MyString
-  city: MyString
-  partner_relation: MyString
-  partner_name: MyString
-  children_total: 1
-  children: MyString
-  income: 1
+  state: 1
 
 two:
-  first_name: 
-  last_name: MyString
-  nick_name: MyString
+  name: MyString
+  user: MyString
   email: MyString
-  street: MyString
-  suburb: MyString
-  city: MyString
-  partner_relation: MyString
-  partner_name: MyString
-  children_total: 1
-  children: MyString
-  income: 1
+  state: 1

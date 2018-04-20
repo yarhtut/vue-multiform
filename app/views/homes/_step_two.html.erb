@@ -1,0 +1,18 @@
+<h3>Address:</h3>
+<div>
+  <legend for="street">Your Street:</legend>
+  <input id="street" name="street" v-model="profile.street">
+</div>
+
+<div>
+  <legend for="city">Your City:</legend>
+  <input id="city" name="city" v-model="profile.city">
+</div>
+
+<div>
+  <legend for="state">Your State:</legend>
+  <input id="state" name="state" v-model="profile.state">
+</div>
+
+<button @click.prevent="prev()">Previous</button>
+<button @click.prevent="stepsTwo()">Next</button>
