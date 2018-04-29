@@ -1,44 +1,124 @@
 <template>
-  <div>
-    <input v-model="msg">
-    <p>prop: {{propMessage}}</p>
-    <p>msg: {{msg}}</p>
-    <p>helloMsg: {{helloMsg}}</p>
-    <p>computed msg: {{computedMsg}}</p>
-    <button @click="greet">Greet</button>
-  </div>
+  <form>
+    <h1>{{profile.formMessage}}</h1>
+    <div v-if="profile.steps === 1">
+      <h3>Profile detail:</h3>
+
+      <div>
+        <legend for="first_name">Your First Name:</legend>
+        <input id="first_name" name="first_name" v-model="profile.first_name">
+      </div>
+
+      <div>
+        <legend for="last_name">Your Last Name:</legend>
+        <input id="last_name" name="last_name" v-model="profile.last_name">
+      </div>
+
+      <div>
+        <legend for="nick_name">Your Nick Name:</legend>
+        <input id="nick_name" name="nick_name" v-model="profile.nick_name">
+      </div>
+
+      <div>
+        <legend for="email">Your Email:</legend>
+        <input id="email" name="email" type="email" v-model="profile.email">
+      </div>
+
+      <button @click.prevent="next()">Next</button>
+    </div>
+
+    <div v-else-if="profile.steps === 2">
+      <h3>Address:</h3>
+      <div>
+        <legend for="street">Your Street:</legend>
+        <input id="street" name="street" v-model="profile.street">
+      </div>
+
+      <div>
+        <legend for="city">Your City:</legend>
+        <input id="city" name="city" v-model="profile.city">
+      </div>
+
+      <div>
+        <legend for="state">Your State:</legend>
+        <input id="state" name="state" v-model="profile.state">
+      </div>
+
+      <button @click.prevent="prev()">Previous</button>
+      <button @click.prevent="stepsTwo()">Next</button>
+
+    </div>
+
+    <div v-else-if="profile.steps === 3">
+      <h3>Step Three</h3>
+      <div>
+        <legend for="partner_name">Your Street:</legend>
+        <input id="partner_name" name="partner_name" v-model="profile.partner_name">
+      </div>
+
+      <div>
+        <legend for="partner_relation">Your City:</legend>
+        <input id="partner_relation" name="partner_relation" v-model="profile.partner_relation">
+      </div>
+
+      <div>
+        <legend for="income">Your State:</legend>
+        <input id="income" name="income" v-model="profile.income">
+      </div>
+      <button @click.prevent="prev()">Previous</button>
+      <button @click.prevent="submit()">Save</button>
+    </div>
+  </form>
 </template>
+
 
 <script lang='ts'>
 import Vue from 'vue';
 import Component from 'vue-class-component';
 
-@Component({
-  props: {
-    propMessage: String
-  }
-})
+@Component({})
 export default class App extends Vue {
   // initial data
-  msg = 123
+  profile: Object  = { 
+  // `Object` is typescript thing for our data type
+  // we can declare as  profile: Array || profile: String ...
+    formMessage: 'Vue class component with typescript',
+    steps: 1,
+    first_name: null,
+    last_name: null,
+    nick_name: null,
+    email: null,
+    street: null,
+    suburb: null,
+    city: null,
+    income: 0,
+    partner_name: null,
+    partner_relation: null,
 
-  // use prop values for initial data
-  helloMsg = 'Hello, ' + this.propMessage
+  }
 
-  // lifecycle hook
-  mounted () {
-    this.greet()
+  prev() {
+    this.profile.steps--;
+  }
+
+  next() {
+    this.profile.steps++;
+  }
+
+  submit() {
+
   }
 
   // computed
-  get computedMsg () {
-    return 'computed ' + this.msg
+  computed() {
+
   }
 
-  // method
-  greet () {
-    alert('greeting: ' + this.msg)
+  // 
+  watch() {
+
   }
+
 }
 </script>
 

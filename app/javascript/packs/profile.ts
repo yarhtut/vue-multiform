@@ -3,7 +3,7 @@ import App from '../app.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
-    el: '#app',
+    el: '#profile',
     render: h => h(App)
   })
 })
