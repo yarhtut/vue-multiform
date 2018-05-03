@@ -1,4 +1,5 @@
 <template>
+  <div class='content-body'>
   <form>
     <h1>{{profile.formMessage}}</h1>
     <div v-if="profile.steps === 1">
@@ -69,8 +70,8 @@
       <button @click.prevent="submit()">Save</button>
     </div>
   </form>
+</div>
 </template>
-
 
 <script lang='ts'>
 import Vue from 'vue';

@@ -13,39 +13,55 @@
  *= require_tree .
  *= require_self
  */
+@import "./font";
 
 $white: #fefefe;
+$smoke: #f1f3f5;
 $silver-grey: #efefef;
 $silver: #cccccc;
 $seashell: #f1f1f1;
+$charcol: #345;
+$parpel: #745fb5;
+$dark-green-blue: #26648e;
+$green: #14af83;
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #aaaaaa;
+  background-color: $smoke;
+  color: $charcol;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  display: flex;
+  justify-content: center;
+
+  .content-body {
+    width: 860px;
+  }
 
   h1 {
-    color: whiteSmoke;
+    font-weight: 200;
+    font-size: 3rem;
   }
 
-  h4 {
-    color: #111111;
-    font-weight: 800;
+  h2 {
+    color: $parpel;
+    font-weight: 400;
     margin-left: .1rem;
-    text-transform: uppercase;
   }
+}
 
-  color: #333333;
+.card {
+  border-radius: 2px;
+  box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3), 0 8px 12px rgba(58, 193, 203, 0.1);
 }
 
 form {
   margin: 1rem;
-  width: 30rem;
+  width: 100%;
 
   input {
     margin-top: 1rem;
-    display: inline-flex;
-    width: 98%;
+    width: 90%;
     height: 4rem;
     margin-bottom: .5rem;
     transition: background 85ms ease-in,border-color 85ms ease-in;
@@ -53,10 +69,11 @@ form {
     border-bottom: 1px solid $silver;
     padding: 0 1rem;
   }
-  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
+  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     background-color: red !important;
   }
+
   input:focus {
     background-color: $white !important;
   }
