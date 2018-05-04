@@ -18,6 +18,8 @@ import Component from 'vue-class-component';
 @Component({})
 export default class Nav extends Vue {
 
+}
+
 </script>
 
 

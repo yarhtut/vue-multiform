@@ -1,16 +1,16 @@
 <template>
   <div>
-  <chart> </chart>
+  <line-chart> </line-chart>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
-import Chart from './Chart.vue';
+import LineChart from './lineChart.vue';
 
 export default {
   components: {
-    Chart
+    LineChart
   }
 }
 </script>

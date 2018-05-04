@@ -84,7 +84,7 @@ export default class Form extends Vue {
   // `Object` is typescript thing for our data type
   // we can declare as  profile: Array || profile: String ...
     formMessage: 'Vue class component',
-    formem: 'with Typescript'
+    formem: 'with Typescript',
     steps: 1,
     first_name: null,
     last_name: null,
@@ -99,15 +99,15 @@ export default class Form extends Vue {
   }
 
   prev() {
-    this.profile.steps--;
+    //this.profile.steps--;
   }
 
   next() {
-    this.profile.steps++;
+    //this.profile.steps++;
   }
 
   stepsTwo() {
-    this.profile.steps++;
+    //this.profile.steps++;
   }
   submit() {
 
