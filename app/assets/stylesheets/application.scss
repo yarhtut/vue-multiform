@@ -22,8 +22,10 @@ $silver: #cccccc;
 $seashell: #f1f1f1;
 $charcol: #345;
 $parpel: #745fb5;
+$dark-parpel: #4f3d85;
 $dark-green-blue: #26648e;
 $green: #14af83;
+$cloud: #9eaab6;
 
 body {
   margin: 0;
@@ -41,6 +43,15 @@ body {
   h1 {
     font-weight: 200;
     font-size: 3rem;
+    line-height: 3rem;
+    vertical-align: center;
+    padding-bottom: 2rem;
+  }
+
+  em {
+    font-style: normal;
+    color: $cloud;
+    margin-left: 1rem;
   }
 
   h2 {
@@ -55,12 +66,23 @@ body {
   box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3), 0 8px 12px rgba(58, 193, 203, 0.1);
 }
 
+.nav {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background: #f8f9fa;
+  border-top: solid 1px rgba(102, 119, 136, 0.2);
+  border-bottom: solid 1px rgba(102, 119, 136, 0.2);
+}
+
 form {
   margin: 1rem;
   width: 100%;
 
-  input {
+  legend {
     margin-top: 1rem;
+  }
+
+  input {
     width: 90%;
     height: 4rem;
     margin-bottom: .5rem;
@@ -74,18 +96,26 @@ form {
     background-color: red !important;
   }
 
+  textarea:focus, input:focus {
+    outline: none;
+    border-bottom: 1px solid $parpel;
+  }
+
   input:focus {
     background-color: $white !important;
   }
 
   button {
+    //background-color: #61bd4f;
+    background-color: $dark-parpel;
+    min-width: 10rem;
+    border-radius: 2px;
     padding: .5rem 1rem;
-    background-color: #61bd4f;
-    border-radius: 5px;
     border: none;
     color: #fefefe;
     font-weight: 600;
     font-size: 14px;
     margin-right: 1rem;
+    margin-top: 1rem;
   }
 }

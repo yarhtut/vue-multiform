@@ -1,9 +1,9 @@
 <template>
   <div class='content-body'>
   <form>
-    <h1>{{profile.formMessage}}</h1>
+    <h1>{{profile.formMessage}}<em>{{profile.formem}}</em></h1>
     <div v-if="profile.steps === 1">
-      <h3>Profile detail:</h3>
+      <h2>Profile detail:</h2>
 
       <div>
         <legend for="first_name">Your First Name:</legend>
@@ -29,7 +29,7 @@
     </div>
 
     <div v-else-if="profile.steps === 2">
-      <h3>Address:</h3>
+      <h2>Address:</h2>
       <div>
         <legend for="street">Your Street:</legend>
         <input id="street" name="street" v-model="profile.street">
@@ -51,7 +51,7 @@
     </div>
 
     <div v-else-if="profile.steps === 3">
-      <h3>Step Three</h3>
+      <h2>Step Three</h2>
       <div>
         <legend for="partner_name">Your Street:</legend>
         <input id="partner_name" name="partner_name" v-model="profile.partner_name">
@@ -78,12 +78,13 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 
 @Component({})
-export default class App extends Vue {
+export default class Form extends Vue {
   // initial data
   profile: Object  = { 
   // `Object` is typescript thing for our data type
   // we can declare as  profile: Array || profile: String ...
-    formMessage: 'Vue class component with typescript',
+    formMessage: 'Vue class component',
+    formem: 'with Typescript'
     steps: 1,
     first_name: null,
     last_name: null,
