@@ -5,7 +5,7 @@
       {{ error }}
     </div>
     <transition name="slide">
-      <div v-if="parts.body" class="content" :key="post.slug">
+      <div v-if="show" class="content" :key="post.slug">
         <h1>ContentFul with <em>JS SDK</em></h1>
         <h2>{{ post.title }}</h2>
         <vue-markdown>{{ parts.body }}</vue-markdown>
@@ -27,7 +27,8 @@ export default{
       loading: false,
       post: null,
       error: null,
-      parts: null
+      parts: null,
+      show: false
     }
   },
   components: {
@@ -61,6 +62,7 @@ export default{
 
         //this.routeId = this.$route.params.id
           this.loading = false
+          this.show = true
       })
       .catch((err) => console.log(err))
     }

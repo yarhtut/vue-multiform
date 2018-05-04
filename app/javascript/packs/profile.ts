@@ -8,6 +8,8 @@ import Nav from '../router/Nav.vue'
 
 Vue.use(VueRouter)
 
+const Home = { template: `<div></div>` }
+
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,

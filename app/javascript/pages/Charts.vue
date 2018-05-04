@@ -1,14 +1,16 @@
 <template>
   <div>
-  <h1>yar</h1>
-  <chart-bar></chart-bar> 
-  <h2>test</h2>
-</div>
+  <chart> </chart>
+  </div>
 </template>
 
 <script>
 import Vue from 'vue';
-import ChartBar from './ChartBar.js'
+import Chart from './Chart.vue';
+
 export default {
+  components: {
+    Chart
+  }
 }
 </script>
