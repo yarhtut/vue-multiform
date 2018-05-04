@@ -6,6 +6,7 @@
     </div>
     <transition name="slide">
       <div v-if="parts.body" class="content" :key="post.slug">
+        <h1>ContentFul with <em>JS SDK</em></h1>
         <h2>{{ post.title }}</h2>
         <vue-markdown>{{ parts.body }}</vue-markdown>
       </div>
@@ -14,7 +15,6 @@
 </template>
 
 <script>
-
 import Vue from 'vue';
 import {createClient} from 'contentful'
 import VueMarkdown from 'vue-markdown'
@@ -50,11 +50,9 @@ export default{
       })
 
       client.getEntry(this.$route.params.id)
-      //client.getEntry('6I5HpBTapygIwiQUkUqmOs')
       .then((entry) =>  {
         this.post = entry.fields
         const partId = entry.fields.parts[0].sys.id
-
 
         client.getEntry(partId)
         .then((child) => {
@@ -62,7 +60,6 @@ export default{
         })
 
         //this.routeId = this.$route.params.id
-
           this.loading = false
       })
       .catch((err) => console.log(err))
@@ -92,5 +89,4 @@ export default{
   opacity: 0;
   transform: translate(-30px, 0);
 }
-
 </style>

@@ -96,7 +96,6 @@ export default class Form extends Vue {
     income: 0,
     partner_name: null,
     partner_relation: null,
-
   }
 
   prev() {
@@ -107,6 +106,9 @@ export default class Form extends Vue {
     this.profile.steps++;
   }
 
+  stepsTwo() {
+    this.profile.steps++;
+  }
   submit() {
 
   }

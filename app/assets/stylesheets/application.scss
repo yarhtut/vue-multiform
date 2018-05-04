@@ -20,7 +20,7 @@ $smoke: #f1f3f5;
 $silver-grey: #efefef;
 $silver: #cccccc;
 $seashell: #f1f1f1;
-$charcol: #345;
+$charcoal: #345;
 $parpel: #745fb5;
 $dark-parpel: #4f3d85;
 $dark-green-blue: #26648e;
@@ -31,11 +31,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: $smoke;
-  color: $charcol;
+  color: $charcoal;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   display: flex;
   justify-content: center;
-
+ 
   .content-body {
     width: 860px;
   }
@@ -72,6 +72,22 @@ body {
   background: #f8f9fa;
   border-top: solid 1px rgba(102, 119, 136, 0.2);
   border-bottom: solid 1px rgba(102, 119, 136, 0.2);
+  list-style:none;
+  margin: 0px;
+
+  li {
+    display: inline-flex;
+    
+    
+    a {
+      text-decoration: none;
+      padding: 1rem;
+
+      &:hover {
+        background: $charcoal; 
+      }
+    }
+  }
 }
 
 form {

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Form from '../app.vue'
 import VueRouter from 'vue-router'
+
 import Post from '../pages/Post.vue'
-
-
+import Charts from '../pages/Charts.vue'
 import Nav from '../router/Nav.vue'
 
 Vue.use(VueRouter)
@@ -12,8 +12,9 @@ const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
-    { path: '/profiles', component: Form },
-    { path: '/profiles/post/:id', component: Post }
+    { path: '/', component: Form },
+    { path: '/post/:id', component: Post }
+    { path: '/charts', component: Charts }
   ]
 })
 

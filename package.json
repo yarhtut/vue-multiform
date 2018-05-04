@@ -4,11 +4,13 @@
   "dependencies": {
     "@rails/webpacker": "3.4",
     "babel-preset-poi": "^10.0.1",
+    "chart.js": "^2.7.2",
     "contentful": "^6.1.0",
     "ts-loader": "3.5.0",
     "typescript": "^2.8.3",
     "vee-validate": "^2.0.8",
     "vue": "^2.5.16",
+    "vue-chartjs": "^3.3.1",
     "vue-loader": "^14.2.2",
     "vue-markdown": "^2.2.4",
     "vue-router": "^3.0.1",
