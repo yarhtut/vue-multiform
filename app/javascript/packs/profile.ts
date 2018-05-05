@@ -10,7 +10,6 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history',
-  base: __dirname,
   routes: [
     { path: '/', component: Form },
     { path: '/post/:id', component: Page },
