@@ -20,7 +20,7 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import VueMarkdown from 'vue-markdown'
-import client from '../plugins/contentful.js'
+import client from '../../plugins/contentful.js'
 
 Vue.use(VueMarkdown)
 
