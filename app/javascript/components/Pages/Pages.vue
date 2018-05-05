@@ -6,9 +6,9 @@
         {{ page.error }}
       </div>
       <transition name="fade">
-      <div v-show="page.parts" class="content">
+      <div v-show="page.parts.body" class="content">
         <h1>ContentFul with <em>JS SDK</em></h1>
-        <h2>{{ page.post.title }}</h2>
+        <h2>{{ page.title }}</h2>
         <vue-markdown>{{ page.parts.body }}</vue-markdown>
       </div>
       </transition>
@@ -34,9 +34,9 @@ export default class Page extends Vue {
 
   page = {
     loading: false,
-    post: null,
+    title: null,
     error: null,
-    parts: null
+    parts: null,
   }
 
 
@@ -49,13 +49,13 @@ export default class Page extends Vue {
   }
 
   fetchPage() {
-    this.page.error = this.page.post = null
+    this.page.error = this.page.title = this.page.parts = null
     this.page.loading = true
     this.previousId = this.$route.params.id
 
     client.getEntry(this.$route.params.id)
     .then((entry) =>  {
-      this.page.post = entry.fields
+      this.page.title = entry.fields.title
 
 
       const partId = entry.fields.parts[0].sys.id
@@ -64,8 +64,8 @@ export default class Page extends Vue {
       .then((part) => {
         this.page.parts = part.fields
       })
+      .then(() => this.page.loading = false )
 
-      this.page.loading = false
     })
     .catch((err) => console.log(err))
   }
