@@ -1,11 +1,12 @@
 <template>
-  <div>
-  <line-chart> </line-chart>
+  <div class='row'>
+    <div class='columns'>
+      <line-chart> </line-chart>
+    </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
 import LineChart from './lineChart.vue';
 
 export default {

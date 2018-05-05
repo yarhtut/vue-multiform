@@ -1,16 +1,18 @@
 <template>
-  <div class="post">
-    <div class="loading" v-if="page.loading">Loading...</div>
-    <div v-if="page.error" class="error">
-      {{ page.error }}
+  <div class='row'>
+    <div class="columns pages">
+      <div class="loading" v-if="page.loading">Loading...</div>
+      <div v-if="page.error" class="error">
+        {{ page.error }}
+      </div>
+      <transition name="fade">
+      <div v-show="page.parts" class="content">
+        <h1>ContentFul with <em>JS SDK</em></h1>
+        <h2>{{ page.post.title }}</h2>
+        <vue-markdown>{{ page.parts.body }}</vue-markdown>
+      </div>
+      </transition>
     </div>
-    <transition name="fade">
-    <div v-show="page.parts" class="content">
-      <h1>ContentFul with <em>JS SDK</em></h1>
-      <h2>{{ page.post.title }}</h2>
-      <vue-markdown>{{ page.parts.body }}</vue-markdown>
-    </div>
-    </transition>
   </div>
 </template>
 

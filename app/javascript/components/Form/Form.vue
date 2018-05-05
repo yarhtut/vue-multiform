@@ -1,6 +1,6 @@
 <template>
-  <div class='content-body'>
-  <form>
+  <div class='row'>
+  <form class='columns'>
     <h1>{{profile.formMessage}}<em>{{profile.formem}}</em></h1>
     <div v-if="profile.steps === 1">
       <h2>Profile detail:</h2>
