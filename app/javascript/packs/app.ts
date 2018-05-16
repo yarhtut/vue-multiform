@@ -5,15 +5,26 @@ import Pages from '../components/Pages/Pages.vue';
 import Form from '../components/Form/Form.vue';
 import Charts from '../components/Charts/Charts.vue';
 import Presentation from '../components/Presentation/Presentation.vue';
+import EventBus from '../components/EventBus/EventBus.vue';
 
 import Layout from './Layout.vue';
 
 Vue.use(VueRouter)
 
+// eventBus
+export const eventBus = new Vue({
+    methods: {
+        changeAge(age) {
+            this.$emit('ageWasEdited', age);
+        }
+    }
+});
+
 const router = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: Presentation },
+    { path: '/event', component: EventBus },
     { path: '/form', component: Form },
     { path: '/pages/:id', component: Pages },
     { path: '/charts', component: Charts }

@@ -12,6 +12,8 @@
         </ul>
         <img :src="slide.imageUrl" />
       </div>
+      <progress value="" max="slide.length">
+</progress>
     </transition>
   </div>
 </template>
