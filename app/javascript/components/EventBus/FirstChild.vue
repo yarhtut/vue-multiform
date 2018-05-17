@@ -35,6 +35,7 @@
 
 <style scoped>
     div {
-        background-color: lightcoral;
+      background-color: lightcoral;
+      padding: 1rem;
     }
 </style>

@@ -1,7 +1,6 @@
 <template>
     <div class="component">
         <h3>Second Child</h3>
-        <p>Edit me!</p>
         <p>My name is {{ myName }}</p>
         <p>I am {{ myAge }} year old.</p>
         <button @click="editAge">Edit Age</button>
@@ -20,4 +19,11 @@
             }
         }
     }
-</script>
+  </script>
+
+<style scoped>
+    div {
+      background-color: #aaaaaa;
+      padding: 1rem;
+    }
+</style>
