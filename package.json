@@ -15,7 +15,8 @@
     "vue-markdown": "^2.2.4",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.16",
-    "vuetify": "^1.0.16"
+    "vuetify": "^1.0.16",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
