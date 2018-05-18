@@ -8,8 +8,12 @@
       </form>
       <hr>
       <div class='row'>
-        <first-todo-list :propsTodos='todos' :propsFunToggle='toggle'></first-todo-list>
-        <second-todo-list :propsTodos='todos' :propsFunToggle='toggle'></second-todo-list>
+        <first-todo-list @updated='counter += $event' :propsName='name' :propsTodos='todos' :propsFunToggle='toggle'></first-todo-list>
+        <second-todo-list @updated='counter += $event' :propsName='name' :propsTodos='todos' :propsFunToggle='toggle'></second-todo-list>
+      </div>
+      <hr>
+      <div class='row'>
+        <counter-result :propsCounter='counter'></counter-result>
       </div>
     </div>
   </div>
@@ -20,6 +24,7 @@ export const generateId = () => Math.floor(Math.random()*100000)
 
 import FirstTodoList from './FirstTodoList';
 import SecondTodoList from './SecondTodoList';
+import CounterResult from './CounterResult';
 
 export default {
   data() {
@@ -31,13 +36,15 @@ export default {
         { id: 3, text: 'Play around in JSFiddle', done: true },
         { id: 4, text: 'Build something awesome', done: true }
       ],
-      name: 'Todos'
+      name: 'Todos',
+      counter: 0
     }
   },
 
   components: {
     FirstTodoList,
-    SecondTodoList
+    SecondTodoList,
+    CounterResult
   },
 
   methods: {

@@ -1,19 +1,34 @@
 <template>
-  <ol class='columns'>
-    <li v-for='todo in propsTodos'>
-      <label>
-        <input type='checkbox'
+  <div class='columns'>
+    <h2>{{ propsName }}:</h2>
+    <ol>
+      <li v-for='todo in propsTodos'>
+        <label>
+          <input type='checkbox'
           v-on:change='propsFunToggle(todo)'
           v-bind:checked='todo.done'>
           {{ todo.text }}
-      </label>
-    </li>
-  </ol>
+        </label>
+      </li>
+    </ol>
+    <button @click='increment'>Increment</button>
+    <button @click='decrement'>Decrement</button>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['propsTodos', 'propsFunToggle']
+  props: ['propsTodos', 'propsFunToggle', 'propsName'],
+
+  methods: {
+    increment() {
+      this.$emit('updated', 1);   
+    },
+
+    decrement() {
+      this.$emit('updated', -1);   
+    }
+  }
 }
 </script>
 
@@ -47,6 +62,7 @@ export default {
 <style scoped>
 
 .columns { background: #aaaaaa; padding: 1rem; }
-  
+
+h2 { color: #efefef; }
 ol { list-style: none; }
 </style>
