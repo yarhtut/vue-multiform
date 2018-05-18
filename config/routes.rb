@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/pages/:id', to: 'profiles#index'
   get '/charts', to: 'profiles#index'
   get '/event', to: 'profiles#index'
+  get '/todos', to: 'profiles#index'
   root to: 'profiles#index'
 end

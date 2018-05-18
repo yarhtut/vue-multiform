@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 import AppNav from '../components/shared/AppNav.vue'
 
 export default {

@@ -1,12 +1,12 @@
 <template>
   <div class='row'>
-    <div class="columns pages">
-      <div class="loading" v-if="page.loading">Loading...</div>
-      <div v-if="page.error" class="error">
+    <div class='columns pages'>
+      <div class='loading' v-if='page.loading'>Loading...</div>
+      <div v-if='page.error' class='error'>
         {{ page.error }}
       </div>
-      <transition name="fade">
-        <div v-show="page.parts.body" class="content">
+      <transition name='fade'>
+        <div v-show='page.parts.body' class='content'>
           <h1>ContentFul with <em>JS SDK</em></h1>
           <h2>{{ page.title }}</h2>
           <vue-markdown>{{ page.parts.body }}</vue-markdown>
@@ -17,6 +17,7 @@
 </template>
 
 <script lang='ts'>
+
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import VueMarkdown from 'vue-markdown'

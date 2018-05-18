@@ -4,8 +4,10 @@ import VueRouter from 'vue-router';
 import Pages from '../components/Pages/Pages.vue';
 import Form from '../components/Form/Form.vue';
 import Charts from '../components/Charts/Charts.vue';
+
 import Presentation from '../components/Presentation/Presentation.vue';
-import EventBus from '../components/EventBus/EventBus.vue';
+import EventBus from '../components/EventBus/ParentComponent.vue';
+import Todos from '../components/Todos/Todo.vue';
 
 import Layout from './Layout.vue';
 
@@ -27,7 +29,8 @@ const router = new VueRouter({
     { path: '/event', component: EventBus },
     { path: '/form', component: Form },
     { path: '/pages/:id', component: Pages },
-    { path: '/charts', component: Charts }
+    { path: '/charts', component: Charts },
+    { path: '/todos', component: Todos }
   ]
 })
 
