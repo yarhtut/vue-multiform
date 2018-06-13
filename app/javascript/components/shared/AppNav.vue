@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class='nav' v-if='true'>
+    <ul class='nav' v-if='navbar'>
       <li><router-link to="/">Presentation</router-link></li>
       <li><router-link to="/event">EventBus</router-link></li>
       <li><router-link to="/form">Form</router-link></li>
@@ -15,6 +15,12 @@
 
 <script>
 export default {
+
+  data() {
+    return {
+      navbar: false
+    }
+  }
 
 }
 

@@ -1,14 +1,29 @@
 <template>
   <div class='columns'>
-    <div>
-      {{ propsCounter}} 
-    </div>
+    <p>{{ doubleCounter }}</p>
+    <p>Number: {{ stringCounter }}</p>
   </div>
 
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-  props: ['propsCounter']
+  //computed: {
+  //  counter() {
+  //    //return this.$store.state.counter;
+  //    return this.$store.getters.doubleCounter;
+  //  },
+  //  clicks() {
+  //    return this.$store.getters.stringCounter;
+  //  }
+  //}
+  computed: {
+    ...mapGetters([
+      'doubleCounter',
+      'stringCounter'
+    ])
+  }
 }
 </script>

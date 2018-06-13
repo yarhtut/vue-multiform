@@ -41,7 +41,7 @@ export default {
       this.name = 'Ben Parent Component Function';
     },
     resetName() {
-      this.name = 'Yar call from child component';
+      this.name = 'Andy call from child component';
     }
   },
   components: {

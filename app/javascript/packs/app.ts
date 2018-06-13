@@ -10,7 +10,7 @@ import EventBus from '../components/EventBus/ParentComponent.vue';
 import Todos from '../components/Todos/Todo.vue';
 
 import Layout from './Layout.vue';
-
+import { store } from '../store/store';
 Vue.use(VueRouter)
 
 // eventBus
@@ -39,6 +39,7 @@ const BaseVue = Vue.extend({ router })
 document.addEventListener('DOMContentLoaded', () => {
   const app = new BaseVue({
     el: '#profile',
+    store,
     render: h => h(Layout)
   })
 })
