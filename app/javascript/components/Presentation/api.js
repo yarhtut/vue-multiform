@@ -15,7 +15,7 @@ const slides = {
   '1': {
     id: 1,
     title: 'Topic',
-    lists: ['Recap', 'Vue Directive', 'Event Handling', 'Computed Properties', 'Components Communitications' ],
+    lists: ['Recap', 'Vue Directive', 'Event Handling', 'Computed Properties', 'Components Communications' ],
   },
   '2': {
     id: 2,
